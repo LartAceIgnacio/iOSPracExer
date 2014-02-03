@@ -10,7 +10,7 @@
 
 @implementation BNRItem
 
-@synthesize itemName,serialNumber,valueInDollars,
+@synthesize itemName,serialNumber,valueInDollars,container,containedItem,
 dateCreated;
 
 -(void)dealloc
@@ -71,5 +71,12 @@ dateCreated;
     return newItem;
     
 }
+
+-(void)setContainedItem:(BNRItem *)i
+{
+    containedItem = i;
+    [i setContainer:self];
+}
+
 
 @end
