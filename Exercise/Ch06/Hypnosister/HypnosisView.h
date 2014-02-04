@@ -9,5 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface HypnosisView : UIView
+{
+    float xShift, yShift;
+    UIColor *stripeColor;
+}
+
+@property (nonatomic, assign)float xShift;
+@property (nonatomic, assign)float yShift;
 
 @end

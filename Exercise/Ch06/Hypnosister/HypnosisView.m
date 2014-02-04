@@ -10,6 +10,8 @@
 
 @implementation HypnosisView
 
+@synthesize xShift,yShift;
+
 -(void)drawRect:(CGRect)rect
 {
     CGRect bounds = [self bounds];
@@ -30,13 +32,16 @@
     
     //Set the stroke color to light gray
     //[[UIColor lightGrayColor]setStroke];
+    [stripeColor setStroke];
     
     //Draw circles from the outside in
     for(float currentRadius = maxRadius; currentRadius >0; currentRadius -=20) {
-        CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
-        CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
-        CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
-        [[UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1]setStroke];
+        //CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+        //CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+        //CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+        //[[UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1]setStroke];
+        center.x += xShift;
+        center.y += yShift;
         CGContextAddArc(context, center.x, center.y, currentRadius, 0.0, M_PI * 2.0, YES);
         CGContextStrokePath(context);
     }
@@ -59,7 +64,38 @@
     
     //[text drawInRect:<#(CGRect)#> withFont:<#(UIFont *)#>
     [text drawInRect:textRect withFont:font];
-
+    
 }
+
+-(id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if(self) {
+        stripeColor = [UIColor lightGrayColor];
+    }
+    return  self;
+}
+
+-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if(motion == UIEventSubtypeMotionShake) {
+        NSLog(@"Shake started");
+        CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+        CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+        CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+        //[stripeColor release];
+        
+        stripeColor = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+        [self setNeedsDisplay];
+    }
+}
+
+-(BOOL)canBecomeFirstResponder
+{
+    return  YES;
+}
+
+
 
 @end
