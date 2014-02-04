@@ -53,7 +53,7 @@
     [[UIColor blackColor]setFill];
     
     CGSize offset = CGSizeMake(3, 4);
-    CGColorRef color = [[UIColor redColor]CGColor];
+    CGColorRef color = [[UIColor lightGrayColor]CGColor];
     CGContextSetShadowWithColor(context, offset, 2.0, color);
     
     
