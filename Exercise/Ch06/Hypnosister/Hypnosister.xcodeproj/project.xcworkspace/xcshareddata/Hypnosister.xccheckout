@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4FE98A2B-D34B-4CC8-AD6D-826FC1DCA0FD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Hypnosister</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AE4C7A50-F24B-4480-990D-5C3AB94719F3</key>
+		<string>https://github.com/LartAceIgnacio/iOSPracExer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Exercise/Ch06/Hypnosister/Hypnosister.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AE4C7A50-F24B-4480-990D-5C3AB94719F3</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/LartAceIgnacio/iOSPracExer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AE4C7A50-F24B-4480-990D-5C3AB94719F3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AE4C7A50-F24B-4480-990D-5C3AB94719F3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSPracExer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
