@@ -17,10 +17,45 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    CGRect wholeWindow = [[self window]bounds];
+    UIScrollView *scrollview = [[UIScrollView alloc]initWithFrame:wholeWindow];
+    [[self window] addSubview:scrollview];
+    
+    //Make your view twice as large as the windown
+    CGRect reallyBigRect;
+    reallyBigRect.origin = CGPointZero;
+    reallyBigRect.size.width = wholeWindow.size.width * 2.0;
+    reallyBigRect.size.height = wholeWindow.size.height * 2.0;
+    [scrollview setContentSize:reallyBigRect.size];
+    
+    //Center it in the scroll view
+    CGPoint offset;
+    offset.x = wholeWindow.size.width * 0.5;
+    offset.y = wholeWindow.size.height * 0.5;
+    [scrollview setContentOffset:offset];
+    
+    //ENABLE ZOOMING
+    [scrollview setMinimumZoomScale:0.5];
+    [scrollview setMaximumZoomScale:5.0];
+    [scrollview setDelegate:self];
+    
+    //Create the view
+    view = [[HypnosisView alloc]initWithFrame:reallyBigRect];
+    [view setBackgroundColor:[UIColor clearColor]];
+    [scrollview addSubview:view];
+    
     
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    [[UIApplication sharedApplication]setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return view;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
