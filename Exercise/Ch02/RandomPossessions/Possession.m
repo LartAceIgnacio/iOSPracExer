@@ -1,14 +1,14 @@
 //
-//  BNRItem.m
+//  Possession.m
 //  RandomPossessions
 //
 //  Created by Ace Ignacio on 1/30/14.
 //  Copyright (c) 2014 Ace Ignacio. All rights reserved.
 //
 
-#import "BNRItem.h"
+#import "Possession.h"
 
-@implementation BNRItem
+@implementation Possession
 
 @synthesize itemName,serialNumber,valueInDollars,
 dateCreated;
@@ -46,7 +46,7 @@ dateCreated;
     return [self initWithName:name serialNumber:sNumber valueInDollars:0];
 }
 
-+(id)randomItem
++(id)randomPossession
 {
     NSArray *randomAdjectivelist = [[NSArray alloc]initWithObjects:@"Fluffy",@"Rusty",@"Shiny",@"Bloody", nil];
     
@@ -61,7 +61,7 @@ dateCreated;
     
     NSString *serialNumber = [NSString stringWithFormat:@"%c%c%c%c%c",'0' + rand() %10, 'A' + rand() % 26, '0' + rand() % 10, 'A' + rand() % 26,'0' + rand() % 10];
     
-    BNRItem *newItem = [[self alloc]initWithName:randomName serialNumber:serialNumber valueInDollars:randomValue];
+    Possession *newItem = [[self alloc]initWithName:randomName serialNumber:serialNumber valueInDollars:randomValue];
     
     return newItem;
     

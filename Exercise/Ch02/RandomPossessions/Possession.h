@@ -1,5 +1,5 @@
 //
-//  BNRItem.h
+//  Possession.h
 //  RandomPossessions
 //
 //  Created by Ace Ignacio on 1/30/14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BNRItem : NSObject
+@interface Possession : NSObject
 {
     NSString *itemName;
     NSString *serialNumber;
@@ -30,6 +30,6 @@
 -(id)initWithNAme:(NSString *)name
      serialNumbeR:(NSString *)sNumber;
 
-+(id)randomItem;
++(id)randomPossession;
 
 @end
