@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842B12DF18A3411600916DE4 /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B12DE18A3411600916DE4 /* FileHelper.m */; };
 		845C80FE18A1D03F00F51871 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845C80FD18A1D03F00F51871 /* Foundation.framework */; };
 		845C810018A1D03F00F51871 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845C80FF18A1D03F00F51871 /* CoreGraphics.framework */; };
 		845C810218A1D03F00F51871 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845C810118A1D03F00F51871 /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		842B12DD18A3411600916DE4 /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
+		842B12DE18A3411600916DE4 /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
 		845C80FA18A1D03F00F51871 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845C80FD18A1D03F00F51871 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		845C80FF18A1D03F00F51871 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,14 +96,16 @@
 		845C80F118A1D03F00F51871 = {
 			isa = PBXGroup;
 			children = (
+				842B12DD18A3411600916DE4 /* FileHelper.h */,
+				842B12DE18A3411600916DE4 /* FileHelper.m */,
 				845C813718A2248700F51871 /* ItemDetailViewController.h */,
 				845C813818A2248700F51871 /* ItemDetailViewController.m */,
 				845C813918A2248700F51871 /* ItemDetailViewController.xib */,
 				845C813518A1EED300F51871 /* HeaderView.xib */,
+				845C812F18A1D69C00F51871 /* Possession.h */,
 				845C813018A1D6A600F51871 /* Possession.m */,
 				845C813218A1D8EA00F51871 /* PossessionStore.h */,
 				845C813318A1D8EA00F51871 /* PossessionStore.m */,
-				845C812F18A1D69C00F51871 /* Possession.h */,
 				845C812C18A1D45600F51871 /* ItemsViewController.h */,
 				845C812D18A1D45600F51871 /* ItemsViewController.m */,
 				845C810318A1D03F00F51871 /* Homepwner */,
@@ -272,6 +277,7 @@
 				845C813418A1D8EA00F51871 /* PossessionStore.m in Sources */,
 				845C813118A1D6A600F51871 /* Possession.m in Sources */,
 				845C810E18A1D03F00F51871 /* HomepwnerAppDelegate.m in Sources */,
+				842B12DF18A3411600916DE4 /* FileHelper.m in Sources */,
 				845C813A18A2248700F51871 /* ItemDetailViewController.m in Sources */,
 				845C810A18A1D03F00F51871 /* main.m in Sources */,
 			);
@@ -480,6 +486,7 @@
 				845C812818A1D03F00F51871 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		845C812918A1D03F00F51871 /* Build configuration list for PBXNativeTarget "HomepwnerTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +495,7 @@
 				845C812B18A1D03F00F51871 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

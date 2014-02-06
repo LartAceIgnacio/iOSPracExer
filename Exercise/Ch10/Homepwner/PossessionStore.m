@@ -36,20 +36,22 @@ static PossessionStore *defualtStore =  Nil;
         return defualtStore;
     }
     self = [super init];
-    
-    if(self) {
-        allPossessions = [[NSMutableArray alloc]init];
-    }
     return self;
 }
 
 -(NSArray *)allPossessions
 {
+    //This ensures allPossessions is created
+    [self fetchPossessionsIfNecessary];
+    
     return allPossessions;
 }
 
 -(Possession *)createPossession
 {
+    //Ensures allPossessions is created
+    [self fetchPossessionsIfNecessary];
+    
     Possession *p = [Possession randomPossession];
     
     [allPossessions addObject:p];
@@ -77,6 +79,34 @@ static PossessionStore *defualtStore =  Nil;
     
     //Insert P in array
     [allPossessions insertObject:p atIndex:to];
+}
+
+-(NSString *)possessionArchievePath
+{
+    //the return path will be sandbox/Documents/possessions.data
+    //Both the saving and the loading methods will call this method to get the same path
+    //preventing a typo in the path name of either method
+    
+    return pathInDocumentDirectory(@"possession.data");
+}
+
+-(BOOL)saveChanges
+{
+    //returns success or failure
+    return [NSKeyedArchiver archiveRootObject:allPossessions toFile:[self possessionArchievePath]];
+}
+
+-(void)fetchPossessionsIfNecessary
+{
+    //If we don't have currently have an all possessions array, try to read one from disk
+    if(!allPossessions) {
+        NSString *path = [self possessionArchievePath];
+        allPossessions = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    }
+    //If we tried to read one from disk but does not exist, then create a new one
+    if(!allPossessions) {
+        allPossessions = [[NSMutableArray alloc]init];
+    }
 }
 
 

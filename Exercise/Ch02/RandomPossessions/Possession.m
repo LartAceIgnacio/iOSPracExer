@@ -46,6 +46,25 @@ dateCreated;
     return [self initWithName:name serialNumber:sNumber valueInDollars:0];
 }
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    
+    if(self) {
+        //For each instance variable that is archived, we decode it
+        //and pass it to setters. (where it is retained)
+        [self setItemName:[aDecoder decodeObjectForKey:@"ItemName"]];
+        [self setSerialNumber:[aDecoder decodeObjectForKey:@"SerialNumber"]];
+        [self setValueInDollars:[aDecoder decodeIntForKey:@"ValueInDollars"]];
+        
+        //date created is read only we have no setter. We explicity
+        //reatin it and set our instance varaiable pointer to it
+        
+        dateCreated = [aDecoder decodeObjectForKey:@"dateCreated"];
+    }
+    return self;
+}
+
 +(id)randomPossession
 {
     NSArray *randomAdjectivelist = [[NSArray alloc]initWithObjects:@"Fluffy",@"Rusty",@"Shiny",@"Bloody", nil];
@@ -67,4 +86,17 @@ dateCreated;
     
 }
 
+-(void)encodeWithCoder:(NSCoder *)encoder
+{
+    //For each instance variable , archive it under its variable name
+    //These objects will also be sent encodewithCode:
+    [encoder encodeObject:itemName forKey:@"ItemName"];
+    [encoder encodeObject:serialNumber forKey:@"SerialNumber"];
+    [encoder encodeObject:dateCreated forKey:@"dateCreated"];
+    // image key I did not include image key in the applicaiton
+    
+    //For primitive type values in dollars, make sure to encode int :forkey
+    // The valueinDollars will be placed in the coder object
+    [encoder encodeInt:valueInDollars forKey:@"ValueInDollars"];
+}
 @end
