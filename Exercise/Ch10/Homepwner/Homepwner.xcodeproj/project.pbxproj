@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		842B12DF18A3411600916DE4 /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B12DE18A3411600916DE4 /* FileHelper.m */; };
+		842B12E218A36E5500916DE4 /* HomepwnerItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B12E118A36E5500916DE4 /* HomepwnerItemCell.m */; };
 		845C80FE18A1D03F00F51871 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845C80FD18A1D03F00F51871 /* Foundation.framework */; };
 		845C810018A1D03F00F51871 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845C80FF18A1D03F00F51871 /* CoreGraphics.framework */; };
 		845C810218A1D03F00F51871 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845C810118A1D03F00F51871 /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		842B12DD18A3411600916DE4 /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
 		842B12DE18A3411600916DE4 /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
+		842B12E018A36E5500916DE4 /* HomepwnerItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepwnerItemCell.h; sourceTree = "<group>"; };
+		842B12E118A36E5500916DE4 /* HomepwnerItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepwnerItemCell.m; sourceTree = "<group>"; };
 		845C80FA18A1D03F00F51871 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845C80FD18A1D03F00F51871 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		845C80FF18A1D03F00F51871 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -108,6 +111,8 @@
 				845C813318A1D8EA00F51871 /* PossessionStore.m */,
 				845C812C18A1D45600F51871 /* ItemsViewController.h */,
 				845C812D18A1D45600F51871 /* ItemsViewController.m */,
+				842B12E018A36E5500916DE4 /* HomepwnerItemCell.h */,
+				842B12E118A36E5500916DE4 /* HomepwnerItemCell.m */,
 				845C810318A1D03F00F51871 /* Homepwner */,
 				845C811C18A1D03F00F51871 /* HomepwnerTests */,
 				845C80FC18A1D03F00F51871 /* Frameworks */,
@@ -275,6 +280,7 @@
 			files = (
 				845C812E18A1D45600F51871 /* ItemsViewController.m in Sources */,
 				845C813418A1D8EA00F51871 /* PossessionStore.m in Sources */,
+				842B12E218A36E5500916DE4 /* HomepwnerItemCell.m in Sources */,
 				845C813118A1D6A600F51871 /* Possession.m in Sources */,
 				845C810E18A1D03F00F51871 /* HomepwnerAppDelegate.m in Sources */,
 				842B12DF18A3411600916DE4 /* FileHelper.m in Sources */,

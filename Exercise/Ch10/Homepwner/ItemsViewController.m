@@ -15,7 +15,7 @@
 -(id)init
 {
     //Call the superclass designated initializer;
-    self = [super initWithStyle:UITableViewStyleGrouped];
+    self = [super initWithStyle:UITableViewStylePlain];
     
     if(self) {
         //Create a new bar button item that will send
