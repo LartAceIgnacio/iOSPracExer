@@ -71,8 +71,11 @@
 
 -(void)setPossession:(Possession *)possession
 {
+    NSString *currencySymbol = [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol];
+    [valueLabel setText:[NSString stringWithFormat:@"%@%@",currencySymbol,[possession valueInDollars]]];
+    
     //Using a possession interface, we can set the values of the subviews
-    [valueLabel setText:[NSString stringWithFormat:@"$%@",[possession valueInDollars]]];
+    //[valueLabel setText:[NSString stringWithFormat:@"$%@",[possession valueInDollars]]];
     [nameLabel setText:[possession itemName]];
     [serialLabel setText:[possession serialNumber]];
 }
